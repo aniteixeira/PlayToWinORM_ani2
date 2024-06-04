@@ -1,0 +1,22 @@
+<h2>Usuários cadastrados</h2>
+
+<a href="/usuarios/novo">Casdastre-se Aqui!</a>
+<table border="1">
+ <tr>
+      <th>Id</th>
+      <th>Nickname</th>
+      <th>Nome</th>
+ </tr>
+    {{#each usuarios}}
+ <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.nickname}}</td>
+      <td>{{this.nome}}</td>
+      <td>
+        <a href="/usuarios/{{this.id}}/update">Atualizar</a>
+        <form action="/usuarios/{{this.id}}/delete" method="post">
+        <input type="submit" value="Ëxcluir"/> </form>
+       </td> 
+ </tr>
+    {{/each}}
+</table>
